@@ -1,38 +1,30 @@
-# ES6 for Humans
+# ES6 para humanos
 
 <br>
 
-### Table of Contents
+### Tabla de contenidos
 
-* [`let`, `const` and block scoping](#1-let-const-and-block-scoping)
-* [Arrow Functions](#2-arrow-functions)
-* [Default Function Parameters](#3-default-function-parameters)
-* [Spread/Rest Operator](#4-spread--rest-operator)
-* [Object Literal Extensions](#5-object-literal-extensions)
-* [Octal and Binary Literals](#6-octal-and-binary-literals)
-* [Array and Object Destructuring](#7-array-and-object-destructuring)
-* [super in Objects](#8-super-in-objects)
-* [Template Literal and Delimiters](#9-template-literal-and-delimiters)
+* [`let`, `const` y ámbito de bloques](#1-let-const-y-ambito-de-bloques)
+* [Funciones flecha](#2-funciones-flecha)
+* [Parámetros de funciones por defecto](#3-parametros-de-funciones-por-defecto)
+* [Operador de propagación/soporte](#4-operador-de-propagacion--soporte)
+* [Extensión de objetos literales](#5-extensión-de-objetos-literales)
+* [Literales Octales y Binarios](#6-literales-octales-y-binarios)
+* [Desestructuración de Arrays y Objectos](#7-desestructuracion-de-arrays-y-objetos)
+* [super en Objectos](#8-super-en-objectos)
+* [Plantillas de Literales y Delimitadores](#9-plantillas-de-literales-y-delimitadores)
 * [for...of vs for...in](#10-forof-vs-forin)
-* [Map and WeakMap](#11-map-and-weakmap)
-* [Set and WeakSet](#12-set-and-weakset)
-* [Classes in ES6](#13-classes-in-es6)
+* [Map y WeakMap](#11-map-y-weakmap)
+* [Set y WeakSet](#12-set-y-weakset)
+* [Clases en ES6](#13-clases-en-es6)
 * [Symbol](#14-symbol)
-* [Iterators](#15-iterators)
-* [Generators](#16-generators)
-* [Promises](#17-promises)
+* [Iteradores](#15-iteradores)
+* [Generadores](#16-generadores)
+* [Promesas](#17-promesas)
 
 <br>
 
-### Languages
-
-* [Chinese Version (Thanks to barretlee)](http://www.barretlee.com/blog/2016/07/09/a-kickstarter-guide-to-writing-es6/)
-* [Portuguese Version (Thanks to alexmoreno)](https://github.com/alexmoreno/ES6-para-humanos)
-* [Russian Version (Thanks to etnolover)](https://github.com/etnolover/ES6-for-humans-translation)
-
-<br>
-
-### 1. let, const and block scoping
+### 1. let, const y ámbito de bloques
 
 `let` allows you to create declarations which are bound to any block, called block scoping. Instead of using `var`, which provides function scope, it is recommended to use `let` in ES6.
 
@@ -71,7 +63,7 @@ A few things to keep in mind:
 
 <br>
 
-### 2. Arrow Functions
+### 2. Funciones flecha
 
 Arrow Functions are a short-hand notation for writing functions in ES6. The arrow function definition consists of a parameter list `( ... )`, followed by the `=>` marker and a function body.
 
@@ -150,7 +142,7 @@ var p = new Person();
 
 <br>
 
-### 3. Default Function Parameters
+### 3. Parámetros de funciones por defecto
 
 ES6 allows you to set default parameters in function definitions. Here is a simple illustration.
 
@@ -161,7 +153,7 @@ getFinalPrice(500); // 850
 
 <br>
 
-### 4. Spread / Rest Operator
+### 4. Operador de propagación/soporte
 
 `...` operator is referred to as spread or rest operator, depending on how and where it is used.
 
@@ -187,7 +179,7 @@ foo(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
 
 <br>
 
-### 5. Object Literal Extensions
+### 5. Extensión de objetos literales
 
 ES6 allows declaring object literals by providing shorthand syntax for initializing properties from variables and defining function methods. It also enables the ability to have computed property keys in an object literal definition.
 
@@ -227,7 +219,7 @@ console.log(car);
 
 <br>
 
-### 6. Octal and Binary Literals
+### 6. Literales Octales y Binarios
 
 ES6 has new support for octal and binary literals.
 Prependending a number with `0o` or `0O` would convert it into octal value. Have a look at the following code:
@@ -242,7 +234,7 @@ console.log(bValue); // 2
 
 <br>
 
-### 7. Array and Object Destructuring
+### 7. Desestructuración de Arrays y Objectos
 
 Destructuring helps in avoiding the need for temp variables when dealing with object and arrays.
 
@@ -268,7 +260,7 @@ console.log(a, b, c); // 4 5 6
 
 <br>
 
-### 8. super in Objects
+### 8. super en Objectos
 
 ES6 allows to use `super` method in (classless) objects with prototypes. Following is a simple example:
 
@@ -293,7 +285,7 @@ child.foo(); // Hello from the Parent
 
 <br>
 
-### 9. Template Literal and Delimiters
+### 9. Plantillas de Literales y Delimitadores
 
 ES6 introduces an easier way to add interpolation which are evaluated automatically.
 
@@ -337,7 +329,7 @@ for (let nickname in nicknames) {
 
 <br>
 
-### 11. Map and WeakMap
+### 11. Map y WeakMap
 
 ES6 introduces new set of data structures called `Map` and `WeakMap`. Now, we actually use maps in JavaScript all the time. In fact every object can be considered as a `Map`.
 
@@ -393,7 +385,7 @@ w.has(o1); // false
 
 <br>
 
-### 12. Set and WeakSet
+### 12. Set y WeakSet
 
 Set objects are collections of unique values. Duplicate values are ignored, as the collection must have all unique values. The values can be primitive types or object references.
 
@@ -449,7 +441,7 @@ ws.has(window);    // false, window has been removed
 
 <br>
 
-### 13. Classes in ES6
+### 13. Clases en ES6
 
 ES6 introduces new class syntax. One thing to note here is that ES6 class is not a new object-oriented inheritance model. They just serve as a syntactical sugar over JavaScript's existing prototype-based inheritance.
 
@@ -543,7 +535,7 @@ To retrieve an object’s symbol properties, use `Object.getOwnPropertySymbols(o
 
 <br>
 
-### 15. Iterators
+### 15. Iteradores
 
 An iterator accesses the items from a collection one at a time, while keeping track of its current position within that sequence. It provides a `next()` method which returns the next item in the sequence. This method returns an object with two properties: done and value.
 
@@ -566,7 +558,7 @@ Note that you can write custom iterators by defining `obj[Symbol.iterator]()` wi
 
 <br>
 
-### 16. Generators
+### 16. Generadores
 
 Generator functions are a new feature in ES6 that allow a function to generate many values over time by returning an object which can be iterated over to pull values from the function one value at a time.
 
@@ -594,7 +586,7 @@ Also, note that generators compute their yielded values on demand, which allows 
 
 <br>
 
-### 17. Promises
+### 17. Promesas
 
 ES6 has native support for promises. A promise is an object that is waiting for an asynchronous operation to complete, and when that operation completes, the promise is either fulfilled(resolved) or rejected.
 
