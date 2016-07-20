@@ -26,7 +26,7 @@
 
 ### 1. let, const y ámbito de bloques
 
-`let` allows you to create declarations which are bound to any block, called block scoping. Instead of using `var`, which provides function scope, it is recommended to use `let` in ES6.
+`let` te permite hacer declaraciones ligadas a un bloque, lo que se conoce como ámbito de bloque. En vez de usar `var`, que proporciona un ámbito a nivel de función, se recomienda usar `let` en ES6.
 
 ```javascript
 var a = 2;
@@ -38,7 +38,7 @@ var a = 2;
 console.log(a); // 2
 ```
 
-Another form of block-scoped declaration is the `const`, which creates constants. In ES6, a `const` represents a constant reference to a value. In other words, the value is not frozen, just the assignment of it. Here's a simple example:
+Otra manera de crear declaraciones en el ámbito de bloque, es usar `const`, lo cual declara constantes. En ES6, una `const` representa una referencia constante a un valor. Es decir, la asignación a la misma está bloqueado, pero el valor puede cambiar. Aquí tenemos un ejemplo simple:
 
 ```javascript
 {
@@ -54,12 +54,12 @@ Another form of block-scoped declaration is the `const`, which creates constants
 }
 ```
 
-A few things to keep in mind:
+Unas cuantas cosas a tener en cuenta:
 
-* Hoisting of `let` and `const` vary from the traditional hoisting of variables and functions. Both `let` and `const` are hoisted, but cannot be accessed before their declaration, because of [Temporal Dead Zone](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified/) 
-* `let` and `const` are scoped to the nearest enclosing block.
-* When using `const`, use CAPITAL_CASING.
-* `const` has to be defined with its declaration.
+* El hoisting de `let` y `const` cambia con respecto al hoisting tradicional de variables y funciones. Tanto `let` como `const` son "elevadas" (hoisted), pero no son accesibles a causa de la [Temporal Dead Zone - ENG](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified/) 
+* `let` y `const` están en el ámbito del bloque más cercano que las contiene.
+* Cuando uses `const`, usa LETRAS_MAYÚSCULAS.
+* A `const` hay que darle un valor cuando se declara.
 
 <br>
 
