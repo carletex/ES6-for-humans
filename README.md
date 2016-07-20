@@ -4,13 +4,13 @@
 
 ### Tabla de contenidos
 
-* [`let`, `const` y ámbito de bloques](#1-let-const-y-ambito-de-bloques)
+* [`let`, `const` y ámbito de bloques](#1-let-const-y-ámbito-de-bloques)
 * [Funciones flecha](#2-funciones-flecha)
-* [Parámetros de funciones por defecto](#3-parametros-de-funciones-por-defecto)
-* [Operador de propagación/soporte](#4-operador-de-propagacion--soporte)
+* [Parámetros de funciones por defecto](#3-parámetros-de-funciones-por-defecto)
+* [Operador de propagación/soporte](#4-operador-de-propagaciónsoporte)
 * [Extensión de objetos literales](#5-extensión-de-objetos-literales)
 * [Literales Octales y Binarios](#6-literales-octales-y-binarios)
-* [Desestructuración de Arrays y Objectos](#7-desestructuracion-de-arrays-y-objetos)
+* [Desestructuración de Arrays y Objectos](#7-desestructuración-de-arrays-y-objetos)
 * [super en Objectos](#8-super-en-objectos)
 * [Plantillas de Literales y Delimitadores](#9-plantillas-de-literales-y-delimitadores)
 * [for...of vs for...in](#10-forof-vs-forin)
