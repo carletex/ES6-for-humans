@@ -10,8 +10,8 @@
 * [Operador de propagación/soporte](#4-operador-de-propagaciónsoporte)
 * [Extensión de objetos literales](#5-extensión-de-objetos-literales)
 * [Literales Octales y Binarios](#6-literales-octales-y-binarios)
-* [Desestructuración de Arrays y Objectos](#7-desestructuración-de-arrays-y-objetos)
-* [super en Objectos](#8-super-en-objectos)
+* [Desestructuración de Arrays y Objetos](#7-desestructuración-de-arrays-y-objetos)
+* [super en Objetos](#8-super-en-objetos)
 * [Plantillas de Literales y Delimitadores](#9-plantillas-de-literales-y-delimitadores)
 * [for...of vs for...in](#10-forof-vs-forin)
 * [Map y WeakMap](#11-map-y-weakmap)
@@ -235,7 +235,7 @@ console.log(bValue); // 2
 
 <br>
 
-### 7. Desestructuración de Arrays y Objectos
+### 7. Desestructuración de Arrays y Objetos
 
 Destructuring helps in avoiding the need for temp variables when dealing with object and arrays.
 
@@ -261,7 +261,7 @@ console.log(a, b, c); // 4 5 6
 
 <br>
 
-### 8. super en Objectos
+### 8. super en Objetos
 
 ES6 allows to use `super` method in (classless) objects with prototypes. Following is a simple example:
 
