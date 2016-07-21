@@ -49,14 +49,14 @@ Otra manera de crear declaraciones en el ámbito de bloque, es usar `const`, lo 
     ARR.push(7);
     console.log(ARR); // [5,6,7]
     ARR = 10; // TypeError: Assignment to constant variable
-    ARR[0] = 3; // value is mutable
+    ARR[0] = 3; // El valor es mutable
     console.log(ARR); // [3,6,7]
 }
 ```
 
 Unas cuantas cosas a tener en cuenta:
 
-* El hoisting de `let` y `const` cambia con respecto al hoisting tradicional de variables y funciones. Tanto `let` como `const` son "elevadas" (hoisted), pero no son accesibles a causa de la [Temporal Dead Zone - ENG](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified/) 
+* El hoisting de `let` y `const` cambia con respecto al hoisting tradicional de variables y funciones. Tanto `let` como `const` son "elevadas" (hoisted), pero no son accesibles a causa de la [Temporal Dead Zone - ENG](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified/)
 * `let` y `const` están en el ámbito del bloque más cercano que las contiene.
 * Cuando uses `const`, usa LETRAS_MAYÚSCULAS.
 * A `const` hay que darle un valor cuando se declara.
@@ -65,81 +65,82 @@ Unas cuantas cosas a tener en cuenta:
 
 ### 2. Funciones flecha
 
-Arrow Functions are a short-hand notation for writing functions in ES6. The arrow function definition consists of a parameter list `( ... )`, followed by the `=>` marker and a function body.
+Las funciones flecha son un atajo para escribir funciones en ES6. La definición de una función flecha consiste en una lista de parámetros `( ... )`, seguido del símbolo `=>` y seguido el cuerpo de la función.
 
 ```javascript
-// Classical Function Expression
-let addition = function(a, b) {
+// Forma clásica
+let suma = function(a, b) {
     return a + b;
 };
 
-// Implementation with Arrow Function
-let addition = (a, b) => a + b;
+// Implementación con funcion flecha
+let suma = (a, b) => a + b;
 ```
-Note that in the above example, the `addition` arrow function is implemented with "concise body" which does not need an explicit return statement.
+Date cuenta que en el ejemplo anterior, la función flecha `suma` esta implementada con una notación concisa en el cuerpo de la función, donde no necesitamos llave ({}) ni una declaración explícita con _return_.
 
-Here is an example with the usual "block body"
-
+Aquí tenemos un ejemplo con el cuerpo habitual de una función:
 ```javascript
-let arr = ['apple', 'banana', 'orange'];
+let arr = ['manzana', 'banana', 'naranja'];
 
-let breakfast = arr.map(fruit => {
-    return fruit + 's';
+let desayuno = arr.map(fruta => {
+    return fruta + 's';
 });
 
-console.log(breakfast); // ['apples', 'bananas', 'oranges']
+console.log(desayuno); // ['manzana', 'banana', 'naranja']
 ```
 
-**Behold! There is more...**
+**¡Espera! Todavía hay más...**
 
-Arrow functions don't just make the code shorter. They are closely related to `this` binding behavior.
+Las funciones flecha no solo hacen nuestro código más corto. Están muy relacionadas con el comportamiento de `this`.
 
-Arrow functions behavior with `this` keyword varies from that of normal functions. Each function in JavaScript defines its own `this` context but Arrow functions capture the `this` value of the enclosing context. Check out the following code:
+El comportamiento de la palabra clave `this` varía con respecto a las funciones normales. Cada función en Javascript define su propio contexto, al que hace referencia `this`, pero las funciones flecha capturan el valor de `this` del contexto que las contienen. Fíjate en el siguiente código:
+
 
 ```javascript
-function Person() {
-    // The Person() constructor defines `this` as an instance of itself.
-    this.age = 0;
+function Persona() {
+    // El constructor Persona() define `this` como una instancia de sí mismo
+    this.edad = 0;
 
-    setInterval(function growUp() {
-        // In non-strict mode, the growUp() function defines `this`
-        // as the global object, which is different from the `this`
-        // defined by the Person() constructor.
-        this.age++;
+    setInterval(function sumaEdad() {
+        // En modo no estricto, la función sumaEdad() define `this`
+        // como el objeto global, que es difente del `this` definido
+        // en el constructor de Persona()
+        this.edad++;
     }, 1000);
 }
-var p = new Person();
+var p = new Persona();
 ```
 
-In ECMAScript 3/5, this issue was fixed by assigning the value in `this` to a variable that could be closed over.
+En ECMAScript 3/5, este problema se resolvía guardando el valor de `this` en una variable.
 
 ```javascript
-function Person() {
+function Persona() {
     var self = this;
-    self.age = 0;
+    self.edad = 0;
 
-    setInterval(function growUp() {
-        // The callback refers to the `self` variable of which
-        // the value is the expected object.
-        self.age++;
+    setInterval(function sumaEdad() {
+        // La variable `self` contiene el valor
+        // de `this` esperado
+        self.edad++;
     }, 1000);
 }
 ```
 
-As mentioned above, Arrow functions capture the this value of the enclosing context, so the following code works as expected.
+Como se ha mencionado arriba, las funciones flecha capturan el valor de `this` del contexto que las contiene, por tanto el siguiente código funciona según lo previsto:
 
 ```javascript
-function Person() {
-    this.age = 0;
+function Persona() {
+    this.edad = 0;
 
     setInterval(() => {
-        this.age++; // `this` properly refers to the person object
+        // `this` se refiere correctamente al objeto persona
+        this.edad++;
     }, 1000);
 }
 
-var p = new Person();
+var p = new Persona();
 ```
-[Read more about 'Lexical this' in arrow functions here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Lexical_this)
+[Lee más acerca del 'this léxico' en funciones flecha - ENG](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Lexical_this)
 
 <br>
 
@@ -455,11 +456,11 @@ class Task {
     constructor() {
         console.log("task instantiated!");
     }
-    
+
     showId() {
         console.log(23);
     }
-    
+
     static loadAll() {
         console.log("Loading all tasks..");
     }
@@ -594,7 +595,7 @@ ES6 has native support for promises. A promise is an object that is waiting for 
 The standard way to create a Promise is by using the `new Promise()` constructor which accepts a handler that is given two functions as parameters. The first handler (typically named `resolve`) is a function to call with the future value when it's ready; and the second handler (typically named `reject`) is a function to call to reject the Promise if it can't resolve the future value.
 
 ```javascript
-var p = new Promise(function(resolve, reject) {  
+var p = new Promise(function(resolve, reject) {
     if (/* condition */) {
         resolve(/* value */);  // fulfilled successfully
     } else {
@@ -613,7 +614,7 @@ p.then((val) => console.log("Promise Resolved", val),
 Returning a value from `then` callbacks will pass the value to the next `then` callback.
 
 ```javascript
-var hello = new Promise(function(resolve, reject) {  
+var hello = new Promise(function(resolve, reject) {
     resolve("Hello");
 });
 
@@ -626,7 +627,7 @@ When returning a promise, the resolved value of the promise will get passed to t
 This is a simple technique to avoid "callback hell".
 
 ```javascript
-var p = new Promise(function(resolve, reject) {  
+var p = new Promise(function(resolve, reject) {
     resolve(1);
 });
 
