@@ -146,11 +146,11 @@ var p = new Persona();
 
 ### 3. Parámetros de funciones por defecto
 
-ES6 allows you to set default parameters in function definitions. Here is a simple illustration.
+ES6 te permite asignar valores por defecto a los parámetros en la definición de las funciones. Aquí un ejemplo:
 
 ```javascript
-let getFinalPrice = (price, tax = 0.7) => price + price * tax;
-getFinalPrice(500); // 850
+let obtenerPrecioFinal = (precio, tasas = 0.7) => precio + precio * tasas;
+obtenerPrecioFinal(500); // 850
 ```
 
 <br>
