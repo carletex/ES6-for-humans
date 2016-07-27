@@ -183,39 +183,38 @@ foo(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
 
 ### 5. Extensión de objetos literales
 
-ES6 allows declaring object literals by providing shorthand syntax for initializing properties from variables and defining function methods. It also enables the ability to have computed property keys in an object literal definition.
+ES6 permite declarar objetos literales a través de una sintaxis compacta. Se pueden inicializar propiedades directamente de variables, y definir funciones de manera ágil. Esta sintaxis, también nos da la posibilidad de definir claves del objeto calculadas. Ejemplo:
 
 ```javascript
-function getCar(make, model, value) {
+function getCar(marca, modelo, precio) {
     return {
-        // with property value shorthand
-        // syntax, you can omit the property
-        // value if key matches variable
-        // name
-        make,  // same as make: make
-        model, // same as model: model
-        value, // same as value: value
+        // Podemos omitir el valor de la 
+        // propiedad, si coincide con
+        // el nombre de la variable
+        marca,  // igual que marca: marca
+        modelo, // igual que modelo: modelo
+        precio, // igual que precio: precio
 
-        // computed values now work with
-        // object literals
-        ['make' + make]: true,
+        // claves calculadas
+        ['marca' + marca]: true,
 
-        // Method definition shorthand syntax
-        // omits `function` keyword & colon
-        depreciate() {
-            this.value -= 2500;
+        // Podemos omitir la clave, 
+        // la palabra `function` y
+        // los dos puntos
+        bajarPrecio() {
+            this.precio -= 2500;
         }
     };
 }
 
-let car = getCar('Kia', 'Sorento', 40000);
-console.log(car);
+let coche = getCar('Kia', 'Sorento', 40000);
+console.log(coche);
 // {
-//     make: 'Kia',
-//     model:'Sorento',
-//     value: 40000,
+//     marca: 'Kia',
+//     modelo:'Sorento',
+//     precio: 40000,
 //     makeKia: true,
-//     depreciate: function()
+//     bajarPrecio: function()
 // }
 ```
 
