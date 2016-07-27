@@ -237,7 +237,7 @@ console.log(bValue); // 2
 
 ### 7. Desestructuración de Arrays y Objetos
 
-Destructuring helps in avoiding the need for temp variables when dealing with object and arrays.
+La destructuración nos evita la necesidad de variables temporales cuando trabajamos con objetos y arrays.
 
 ```javascript
 function foo() {
@@ -263,25 +263,25 @@ console.log(a, b, c); // 4 5 6
 
 ### 8. super en Objetos
 
-ES6 allows to use `super` method in (classless) objects with prototypes. Following is a simple example:
+ES6 nos permite usar el método `super` en objetos (sin clase) con prototipos. Aquí podemos ver un ejemplo:
 
 ```javascript
-var parent = {
+var padre = {
     foo() {
-        console.log("Hello from the Parent");
+        console.log("Hola desde el padre");
     }
 }
 
-var child = {
+var hijo = {
     foo() {
         super.foo();
-        console.log("Hello from the Child");
+        console.log("Hola desde el hijo");
     }
 }
 
-Object.setPrototypeOf(child, parent);
-child.foo(); // Hello from the Parent
-             // Hello from the Child
+Object.setPrototypeOf(hijo, padre);
+hijo.foo(); // Hola desde el padre
+             // Hola desde el hijo
 ```
 
 <br>
