@@ -288,14 +288,14 @@ hijo.foo(); // Hola desde el padre
 
 ### 9. Plantillas de Literales y Delimitadores
 
-ES6 introduces an easier way to add interpolation which are evaluated automatically.
+ES6 introduce una manera más sencilla de interpolación, donde los valores son evaluado automáticamente.
 
-* <code>\`${ ... }\`</code> is used for rendering the variables.
-* <code>\`</code> Backtick is used as delimiter.
+* <code>\`${ ... }\`</code> se usa para renderizar variables.
+* <code>\`</code> La comilla invertida se usa como delimitador.
 
 ```javascript
-let user = 'Kevin';
-console.log(`Hi ${user}!`); // Hi Kevin!
+let usuario = 'Kevin';
+console.log(`Hola ${usuario}!`); // Hola Kevin!
 ```
 
 <br>
