@@ -222,14 +222,14 @@ console.log(coche);
 
 ### 6. Literales Octales y Binarios
 
-ES6 has new support for octal and binary literals.
-Prependending a number with `0o` or `0O` would convert it into octal value. Have a look at the following code:
+ES6 tiene soporte para literales octales y binarios.
+Poniendo delante del número `0o` or `0O`, lo convierte en octal, y `0b` or `0B` en binario. Ejemplo:
 
 ```javascript
-let oValue = 0o10;
+let oValue = 0o10; // 0o o 0O para octal
 console.log(oValue); // 8
 
-let bValue = 0b10; // 0b or 0B for binary
+let bValue = 0b10; // 0b o 0B para binario
 console.log(bValue); // 2
 ```
 
