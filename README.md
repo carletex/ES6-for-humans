@@ -301,26 +301,26 @@ console.log(`Hola ${usuario}!`); // Hola Kevin!
 <br>
 
 ### 10. for...of vs for...in
-* `for...of` iterates over iterable objects, such as array.
+* `for...of` itera sobre cualquier iterable.
 
 ```javascript
-let nicknames = ['di', 'boo', 'punkeye'];
-nicknames.size = 3;
-for (let nickname of nicknames) {
-    console.log(nickname);
+let nombres = ['di', 'boo', 'punkeye'];
+nombres.size = 3;
+for (let nombre of nombres) {
+    console.log(nombre);
 }
 // di
 // boo
 // punkeye
 ```
 
-* `for...in` iterates over all enumerable properties of an object.
+* `for...in` itera sobre todas las propiedades enumerables de una objeto.
 
 ```javascript
-let nicknames = ['di', 'boo', 'punkeye'];
-nicknames.size = 3;
-for (let nickname in nicknames) {
-    console.log(nickname);
+let nombres = ['di', 'boo', 'punkeye'];
+nombres.size = 3;
+for (let nombre in nombres) {
+    console.log(nombre);
 }
 // 0
 // 1
