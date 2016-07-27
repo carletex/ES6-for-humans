@@ -157,9 +157,9 @@ obtenerPrecioFinal(500); // 850
 
 ### 4. Operador de propagación/soporte
 
-`...` operator is referred to as spread or rest operator, depending on how and where it is used.
+El operador `...` se llama operador de propagación (spread) o de soporte (rest), dependiendo de como se use.
 
-When used with any iterable, it acts as to "spread" it into individual elements:
+Cuando se usa con cualquier iterable, actúa como operador de propagación, expandiendo el iterable en elementos individuales:
 
 ```javascript
 function foo(x, y, z) {
@@ -170,7 +170,7 @@ let arr = [1, 2, 3];
 foo(...arr); // 1 2 3
 ```
 
-The other common usage of `...` is gathering a set of values together into an array. This is referred as "rest" operator.
+El otro uso común de `...` es agrupar un conjunto de valores en un array. En este caso se le llama operador de soporte:
 
 ```javascript
 function foo(...args) {
