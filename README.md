@@ -188,7 +188,7 @@ ES6 permite declarar objetos literales a través de una sintaxis compacta. Se pu
 ```javascript
 function getCar(marca, modelo, precio) {
     return {
-        // Podemos omitir el valor de la 
+        // Podemos omitir el valor de la
         // propiedad, si coincide con
         // el nombre de la variable
         marca,  // igual que marca: marca
@@ -198,7 +198,7 @@ function getCar(marca, modelo, precio) {
         // claves calculadas
         ['marca' + marca]: true,
 
-        // Podemos omitir la clave, 
+        // Podemos omitir la clave,
         // la palabra `function` y
         // los dos puntos
         bajarPrecio() {
@@ -332,37 +332,37 @@ for (let nombre in nombres) {
 
 ### 11. Map y WeakMap
 
-ES6 introduces new set of data structures called `Map` and `WeakMap`. Now, we actually use maps in JavaScript all the time. In fact every object can be considered as a `Map`.
+ES6 introduce un nuevo conjunto de estructuras de datos, `Map` y `WeakMap`. Ahora mismo ya estamos usando Maps en JavaScript todo el tiempo. De hecho, cada objeto puede ser considerado un `Map`.
 
-An object is made of keys (always strings) and values, whereas in `Map`, any value (both objects and primitive values) may be used as either a key or a value. Have a look at this piece of code:
+Un objeto esta compuesto de claves (siempre cadenas) y valores, donde en un `Map`, cualquier valor (ya sean objetos o valores primitivos) puede ser usados como clave o valor. Mira el siguiente código:
 
 ```javascript
 var myMap = new Map();
 
-var keyString = "a string",
+var keyString = "una cadena",
     keyObj = {},
     keyFunc = function() {};
 
-// setting the values
-myMap.set(keyString, "value associated with 'a string'");
-myMap.set(keyObj, "value associated with keyObj");
-myMap.set(keyFunc, "value associated with keyFunc");
+// Asignamos los valores
+myMap.set(keyString, "valor asociado con 'una cadena'");
+myMap.set(keyObj, "valor asociado con keyObj");
+myMap.set(keyFunc, "valor asociado keyFunc");
 
 myMap.size; // 3
 
 // getting the values
-myMap.get(keyString);    // "value associated with 'a string'"
-myMap.get(keyObj);       // "value associated with keyObj"
-myMap.get(keyFunc);      // "value associated with keyFunc"
+myMap.get(keyString);    // "valor asociado con 'una cadena'"
+myMap.get(keyObj);       // "valor asociado con keyObjj"
+myMap.get(keyFunc);      // "valor asociado keyFunc"
 ```
 
 **WeakMap**
 
-A `WeakMap` is a Map in which the keys are weakly referenced, that doesn’t prevent its keys from being garbage-collected. That means you don't have to worry about memory leaks.
+Un `WeakMap` es un Map donde las claves esta referenciaadas de forma débil, lo que no previene que sus claves sean recolectadas por el recoletor de basura. Eso significa que no te tienes que preocupar por fugas de memoria.
 
-Another thing to note here- in `WeakMap` as opposed to `Map` *every key must be an object*.
+Otra cosa a tener en cuenta, en `WeakMap`, al contrario que en `Map`, *las claves deben ser un objeto*.
 
-A `WeakMap` only has four methods `delete(key)`, `has(key)`, `get(key)` and `set(key, value)`.
+Un `WeakMap` solo tiene cuatro métodos `delete(key)`, `has(key)`, `get(key)` y `set(key, value)`.
 
 ```javascript
 let w = new WeakMap();
@@ -377,7 +377,7 @@ w.set(o1, 37);
 w.set(o2, "azerty");
 w.set(o3, undefined);
 
-w.get(o3); // undefined, because that is the set value
+w.get(o3); // undefined, porque es el valor que hemos asignado
 
 w.has(o1); // true
 w.delete(o1);
