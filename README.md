@@ -358,7 +358,7 @@ myMap.get(keyFunc);      // "valor asociado keyFunc"
 
 **WeakMap**
 
-Un `WeakMap` es un Map donde las claves esta referenciaadas de forma débil, lo que no previene que sus claves sean recolectadas por el recoletor de basura. Eso significa que no te tienes que preocupar por fugas de memoria.
+Un `WeakMap` es un Map donde las claves esta referenciadas de forma débil, lo que no previene que sus claves sean recolectadas por el recoletor de basura. Eso significa que no te tienes que preocupar por fugas de memoria.
 
 Otra cosa a tener en cuenta, en `WeakMap`, al contrario que en `Map`, *las claves deben ser un objeto*.
 
@@ -388,7 +388,7 @@ w.has(o1); // false
 
 ### 12. Set y WeakSet
 
-Set objects are collections of unique values. Duplicate values are ignored, as the collection must have all unique values. The values can be primitive types or object references.
+Los objetos `Set` son colecciones de valores únicos. Los valores duplicados son ignorados, ya que la colección solo puede tener valores únicos. Los valores puede ser primitivos o referencias a objetos.
 
 ```javascript
 let mySet = new Set([1, 1, 2, 2, 3, 3]);
@@ -398,7 +398,8 @@ mySet.add('strings');
 mySet.add({ a: 1, b:2 });
 ```
 
-You can iterate over a set by insertion order using either the `forEach` method or the `for...of` loop.
+Puedes iterar sobre un Set o bien usando el método `forEach` o el bucle `for...of`.
+
 
 ```javascript
 mySet.forEach((item) => {
@@ -419,11 +420,12 @@ for (let value of mySet) {
     // Object { a: 1, b: 2 }
 }
 ```
-Sets also have the `delete()` and `clear()` methods.
+
+Sets tambien tienen los métodos `delete()` y `clear()`.
 
 **WeakSet**
 
-Similar to `WeakMap`, the `WeakSet` object lets you store weakly held *objects* in a collection. An object in the `WeakSet` occurs only once; it is unique in the WeakSet's collection.
+Similar a `WeakMap`, y `WeakSet` almacena solo objetos y de manera débil. Un objeto en `WeakSet` solo está una vez ya que es único en la colección.
 
 ```javascript
 var ws = new WeakSet();
@@ -434,10 +436,10 @@ ws.add(window);
 ws.add(obj);
 
 ws.has(window); // true
-ws.has(foo);    // false, foo has not been added to the set
+ws.has(foo);    // false, foo todavía no se ha añadio al set
 
-ws.delete(window); // removes window from the set
-ws.has(window);    // false, window has been removed
+ws.delete(window); // se quita window del set
+ws.has(window);    // false, window ya no está en el set
 ```
 
 <br>
