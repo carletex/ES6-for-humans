@@ -26,7 +26,7 @@
 
 ### 1. let, const y ámbito de bloques
 
-`let` te permite hacer declaraciones ligadas a un bloque, lo que se conoce como ámbito de bloque. En vez de usar `var`, que proporciona un ámbito a nivel de función, se recomienda usar `let` en ES6.
+`let` permite hacer declaraciones ligadas a un bloque, lo que se conoce como ámbito de bloque. En vez de usar `var`, que proporciona un ámbito a nivel de función, se recomienda usar `let` en ES6.
 
 ```javascript
 var a = 2;
@@ -76,7 +76,7 @@ let suma = function(a, b) {
 // Implementación con funcion flecha
 let suma = (a, b) => a + b;
 ```
-Date cuenta que en el ejemplo anterior, la función flecha `suma` esta implementada con una notación concisa en el cuerpo de la función, donde no necesitamos llave ({}) ni una declaración explícita con _return_.
+Date cuenta que en el ejemplo anterior, la función flecha `suma` está implementada con una notación concisa en el cuerpo de la función, donde no necesitamos llave ({}) ni una declaración explícita con _return_.
 
 Aquí tenemos un ejemplo con el cuerpo habitual de una función:
 ```javascript
@@ -159,7 +159,7 @@ obtenerPrecioFinal(500); // 850
 
 El operador `...` se llama operador de propagación (spread) o de soporte (rest), dependiendo de como se use.
 
-Cuando se usa con cualquier iterable, actúa como operador de propagación, expandiendo el iterable en elementos individuales:
+Cuando se usa con cualquier iterable actúa como operador de propagación, expandiendo el iterable en elementos individuales:
 
 ```javascript
 function foo(x, y, z) {
@@ -301,6 +301,7 @@ console.log(`Hola ${usuario}!`); // Hola Kevin!
 <br>
 
 ### 10. for...of vs for...in
+
 * `for...of` itera sobre cualquier iterable.
 
 ```javascript
