@@ -446,105 +446,105 @@ ws.has(window);    // false, window ya no está en el set
 
 ### 13. Clases en ES6
 
-ES6 introduces new class syntax. One thing to note here is that ES6 class is not a new object-oriented inheritance model. They just serve as a syntactical sugar over JavaScript's existing prototype-based inheritance.
+ES6 introduce una nueva sintaxis para clases. Hay que tener en consideración que las clases en ES6 no define un nuevo modelo de herencia orientada a objetos. Simplemente sirve como azucar sintáctico sobre la existente herencia basada en prototipos de JavaScript.
 
-One way to look at a class in ES6 is just a new syntax to work with prototypes and contructor functions that we'd use in ES5.
+Una manera de ver las clases en ES6, es considerarlas una nueva manera de trabajar con prototipos y funciones constructoras tal como haríamos con ES5.
 
-Functions defined using the `static` keyword implement static/class functions on the class.
+Funciones definidas usando la palabra `static` implementan funciones estática en la clase.
+
 
 ```javascript
-class Task {
+class Tarea {
     constructor() {
-        console.log("task instantiated!");
+        console.log("Tarea instanciada!");
     }
 
-    showId() {
+    mostrarId() {
         console.log(23);
     }
 
-    static loadAll() {
-        console.log("Loading all tasks..");
+    static cargarTodas() {
+        console.log("Cargando tareas..");
     }
 }
 
-console.log(typeof Task); // function
-let task = new Task(); // "task instantiated!"
-task.showId(); // 23
-Task.loadAll(); // "Loading all tasks.."
+console.log(typeof Tarea); // function
+let task = new Tarea(); // "Tarea instanciada!"
+task.mostrarId(); // 23
+task.cargarTodas(); // "Cargando tareas.."
 ```
 
-**extends and super in classes**
+**extends y super en clases**
 
-Consider the following code:
+Tenemos el siguiente código:
 
 ```javascript
-class Car {
+class Coche {
     constructor() {
-        console.log("Creating a new car");
+        console.log("Creando un nuevo coche");
     }
 }
 
-class Porsche extends Car {
+class Porsche extends Coche {
     constructor() {
         super();
-        console.log("Creating Porsche");
+        console.log("Creando un Porsche");
     }
 }
 
 let c = new Porsche();
-// Creating a new car
-// Creating Porsche
+// Creando un nuevo coche
+// Creando un Porsche
 ```
 
-`extends` allow child class to inherit from parent class in ES6. It is important to note that the derived constructor must call super().
+`extends` permite a clases hijas heredar de clases padres en ES6. Es importante decir, que el constructor derivado debe llamar a super().
 
-Also, you can call parent class's method in child class's methods using `super.parentMethodName()`
+Además, también puedes llamar a un método del padre desde una clase hija usando `super.metodoDelPadre()`
 
-[Read more about classes here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes)
+[Lee más sobre clases en ES6 - ENG](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes)
 
-A few things to keep in mind:
+Un par de cosas a tener en cuenta:
 
-* Class declarations are not hoisted. You first need to declare your class and then access it, otherwise ReferenceError will be thrown.
-* There is no need to use `function` keyword when defining functions inside a class definition.
+* Las declaraciones de clases no son elevadas (hoisted). Primero tiene que declarar la clase y despues usarla, si no se obtendrá un ReferenceError
+* No hay necesidad de usar la palabra `function` cuando se define un método dentro de una clase.
 
 <br>
 
 ### 14. Symbol
 
-A symbol is a unique and immutable data type introduced in ES6. The purpose of a symbol is to generate a unique identifier but you can never get any access to that identifier.
+Un `symbol`, es un tipo de dato único e inmutable nuevo en ES6. El propósito de symbol es generar un identificador único, aunque no puedes acceder a ese identificador.
 
-Here’s how you create a symbol:
+Así es como creas un symbol:
 
 ```javascript
-var sym = Symbol("some optional description");
+var sym = Symbol("descripción opcional");
 console.log(typeof sym); // symbol
 ```
 
-Note that you cannot use `new` with `Symbol(…)`.
+Date cuenta que no puedes usar `new` con `Symbol(...)`.
 
-If a symbol is used as a property/key of an object, it’s stored in a special way that the property will not show up in a normal enumeration of the object’s properties.
+Si un symbol es usado como una propiedad/clave de un objeto, se guarda de una manera especial, de tal manera que la propiedad no se mostrará de manera habitual cuando se enumeren las propiedades del objeto.
 
 ```javascript
 var o = {
     val: 10,
-    [Symbol("random")]: "I'm a symbol",
+    [Symbol("random")]: "Soy un symbol",
 };
 
 console.log(Object.getOwnPropertyNames(o)); // val
 ```
 
-To retrieve an object’s symbol properties, use `Object.getOwnPropertySymbols(o)`
-
+Para obtener los symbols de un objeto, usa `Object.getOwnPropertySymbols(o)`.
 
 <br>
 
 ### 15. Iteradores
 
-An iterator accesses the items from a collection one at a time, while keeping track of its current position within that sequence. It provides a `next()` method which returns the next item in the sequence. This method returns an object with two properties: done and value.
+Un iterador accede a los elementos de una colección uno por uno, a la vez que guarda la posición actual en la secuencia. Expone el método `next()` que devuelve el siguiente elemento de la secuencia. Este método devuelve un objeto con dos propiedades: done y value.
 
-ES6 has `Symbol.iterator` which specifies the default iterator for an object. Whenever an object needs to be iterated (such as at the beginning of a for..of loop), its @@iterator method is called with no arguments, and the returned iterator is used to obtain the values to be iterated.
+ES6 tiene `Symbol.iterator`, el cual especifica el iterador por defecto para un objeto. Cuando un objeto necesita ser iterado (por ejemplo al principio de un bucle for..of), su método @@iterador es llamado sin argumentos, y el iterador que devuelve se usa para obtener los valores a ser iterados.
 
-Let’s look at an array, which is an iterable, and the iterator it can produce to consume its values:
+Vamos a ver un array, que es un iterable, y el iterador que puede producir para consumir sus valores:
 
 ```javascript
 var arr = [11,12,13];
@@ -557,82 +557,83 @@ itr.next(); // { value: 13, done: false }
 itr.next(); // { value: undefined, done: true }
 ```
 
-Note that you can write custom iterators by defining `obj[Symbol.iterator]()` with the object definition.
+Date cuenta que puede escribir tu propio iterador definiendo `obj[Symbol.iterator]()` en la definición del objeto.
 
 <br>
 
 ### 16. Generadores
 
-Generator functions are a new feature in ES6 that allow a function to generate many values over time by returning an object which can be iterated over to pull values from the function one value at a time.
+Las funciones generadoras son una nueva funcionalidad en ES6 que permite a una función generar varios valores a lo largo del tiempo, devolviendo un objeto que puede ser iterado para obtener valores uno por uno.
 
-A generator function returns an **iterable object** when it's called.
-It is written using the new `*` syntax as well as the new `yield` keyword introduced in ES6.
+Una función generadora devuelve un **objeto iterable** cuando es llamada.
+
+Se declara escribiendo la nueva sintaxis con `*` y `yield`, introducidos en ES6.
 
 ```javascript
-function *infiniteNumbers() {
+function *numerosInfinitos() {
     var n = 1;
     while (true) {
         yield n++;
     }
 }
 
-var numbers = infiniteNumbers(); // returns an iterable object
+var numbers = numerosInfinitos(); // Devuelve un objeto iterador
 
 numbers.next(); // { value: 1, done: false }
 numbers.next(); // { value: 2, done: false }
 numbers.next(); // { value: 3, done: false }
 ```
+Cada vez que se ejecuta yield, el valor con el que se llama se convierte en el siguiente valor de la secuencia.
 
-Each time yield is called, the yielded value becomes the next value in the sequence.
-
-Also, note that generators compute their yielded values on demand, which allows them to efficiently represent sequences that are expensive to compute, or even infinite sequences.
+Date cuenta que los generadores calculan los valores bajo demanda, lo que permite representar secuencias que son costosas de calcular (incluso infintas) de manera eficiente.
 
 <br>
 
 ### 17. Promesas
 
-ES6 has native support for promises. A promise is an object that is waiting for an asynchronous operation to complete, and when that operation completes, the promise is either fulfilled(resolved) or rejected.
+ES6 tiene soporte nativo para promesas. Una promesa es un objeto que está esperando a que una operación asíncrona termine, y cuando la operación termine, la promesa estará resuelta o rechazada.
 
-The standard way to create a Promise is by using the `new Promise()` constructor which accepts a handler that is given two functions as parameters. The first handler (typically named `resolve`) is a function to call with the future value when it's ready; and the second handler (typically named `reject`) is a function to call to reject the Promise if it can't resolve the future value.
+La manera estandar de crear una promesa es ejecutando el constructo `new Promise()`, que acepta un callback que tiene dos funciones como parámetro. El primer parámetro (normalmente se le llama `resolve`) es la función que hay que llamar en el futuro cuando el valor esté listo, y el segundo parámetro (nomalmente llamado `reject`) es la funcion que hay que llamar para rechazar la promesa, si no se puede resolver la operación que estamos operando.
 
 ```javascript
 var p = new Promise(function(resolve, reject) {
-    if (/* condition */) {
-        resolve(/* value */);  // fulfilled successfully
+    if (/* condicion */) {
+        resolve(/* value */);  // Todo OK
     } else {
-        reject(/* reason */);  // error, rejected
+        reject(/* reason */);  // error, rechazada
     }
 });
 ```
 
-Every Promise has a method named `then` which takes a pair of callbacks. The first callback is called if the promise is resolved, while the second is called if the promise is rejected.
+Todas las promesas tienen un método llamada `then`, que recibe dos callbacks. El primero se llama si la promesa ha sido resuelta, y el segundo cuando la promesa ha sido rechazada.
+
 
 ```javascript
-p.then((val) => console.log("Promise Resolved", val),
-       (err) => console.log("Promise Rejected", err));
+p.then((val) => console.log("Promesa resuelta", val),
+       (err) => console.log("Promesa rechazada", err));
 ```
 
-Returning a value from `then` callbacks will pass the value to the next `then` callback.
+Devolver un valor desde un callback de `then`, pasará el valor al siguiente callback.
+
 
 ```javascript
 var hello = new Promise(function(resolve, reject) {
-    resolve("Hello");
+    resolve("Hola");
 });
 
-hello.then((str) => `${str} World`)
+hello.then((str) => `${str} Mundo`)
      .then((str) => `${str}!`)
-     .then((str) => console.log(str)) // Hello World!
+     .then((str) => console.log(str)) // Hola Mundo!
 ```
 
-When returning a promise, the resolved value of the promise will get passed to the next callback to effectively chain them together.
-This is a simple technique to avoid "callback hell".
+Cuando se devuelve una promesa, el valor resuelto de la promesa se pasará al siguiente callback. Eso permite encadenarlos correctamente. Es un técnica sencilla para evitar el "callback hell"
 
 ```javascript
 var p = new Promise(function(resolve, reject) {
     resolve(1);
 });
 
-var eventuallyAdd1 = (val) => {
+var suma1 = (val) => {
     return new Promise(function(resolve, reject){
         resolve(val + 1);
     });
